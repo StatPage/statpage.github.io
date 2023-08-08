@@ -1,0 +1,12 @@
+# main links
+main:
+  - title: "Github"
+    url: "https://github.com/StatPage"
+  - title: "Category"
+    url: /categories/
+  - title: "Tags"
+    url: /tags/
+  # - title: "Sample Collections"
+  #   url: /collection-archive/
+  # - title: "Sitemap"
+  #   url: /sitemap/
