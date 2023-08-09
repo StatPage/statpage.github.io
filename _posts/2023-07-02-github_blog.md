@@ -3,8 +3,8 @@ layout: single
 title:  "깃허브 블로그 포스팅 기록 & 기능 정리"
 toc: true
 toc_sticky: true
-categories: [programming]
-tags: [포스팅, 블로그, 이미지, 이미지 정렬, ]
+# categories: [programming]
+# tags: [포스팅, 블로그, 이미지, 이미지 정렬, ]
 ---
 
 # 깃허브 블로그 시작하는 이유

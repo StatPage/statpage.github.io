@@ -3,8 +3,8 @@ layout: single
 title:  "7월 회의"
 toc: true
 toc_sticky: true
-categories: programming
-tags: [python, documentation, slurm, DoD, doxygen]
+# categories: programming
+# tags: [python, documentation, slurm, DoD, doxygen]
 ---
 
 # 첫째 주

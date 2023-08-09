@@ -3,8 +3,8 @@ layout: single
 title:  "회귀 분석을 위한 기초통계학"
 toc: true
 toc_sticky: true
-categories: [regression analysis]
-tags: [통계학, 모집단, 표본, 확률변수, 분산, 분포, 회귀 분석, 계량경제학]
+# categories: [regression analysis]
+# tags: [통계학, 모집단, 표본, 확률변수, 분산, 분포, 회귀 분석, 계량경제학]
 ---
 
 # 데이터 사이언스를 위한 회귀분석 정리 1편: 평균부터 모형까지

@@ -3,8 +3,8 @@ layout: single
 title:  "통계학을 배우면 뭘 할 수 있을까?"
 toc: true
 toc_sticky: true
-categories: [lecture]
-tags: []
+# categories: [lecture]
+# tags: []
 published: false
 ---
 

@@ -3,8 +3,8 @@ layout: single
 title:  "태블로 Certified Data Analyst 시험 후기"
 toc: true
 toc_sticky: true
-categories: tableau
-tags: [tableau, certified data analyst, 자격증]
+# categories: tableau
+# tags: [tableau, certified data analyst, 자격증]
 ---
 
 # 들어가며
