@@ -151,7 +151,7 @@ published: false
 
 결국 회사나 사람이나 결과에 대한 책임은 스스로가 지는 것이다. 그런데 판단을 내릴 수 없는 분석 결과에 돈을 주면서 결정을 못 하고 있으면 이는 누구에게도 좋지 않은 결과로 이어진다.
 
-#### Reference
+Reference
 - [컨설턴트의 솔루션, 맥킨지 문제해결 과정](https://brunch.co.kr/@backup/15)
 - [운명 바꾼 최악의 컨설팅… 결국 역사 뒤안길로](https://biz.newdaily.co.kr/site/data/html/2021/04/06/2021040600011.html)
 
@@ -184,7 +184,7 @@ published: false
 
 실제 반도체 개발 회사에 계시는 분께서도 회사 내부용으로 AI를 도입할 시에는 적어도 연간 5억은 들기 떄문에 고민하셨다는 일화를 말씀해 주시기도 하셨다.
 
-#### Reference
+Reference
 - ['AI반도체'는 왜 미래 반도체인가](https://www.opinionnews.co.kr/news/articleView.html?idxno=82581)
 - [OpenAI와 마이크로소프트의 관계\|ChatGPT의 실소유주?](https://make-spend-money.tistory.com/210)
 - [막대한 AI비용에 골머리를 앓는 빅테크](https://www.ekoreanews.co.kr/news/articleView.html?idxno=67346)
@@ -206,7 +206,7 @@ published: false
 
 CLT가 정말 유용한 이유는 우리가 흔히 알고 있는 test를 가능하게 만들어주기 때문이다.
 
-#### Reference
+Reference
 - [나이팅게일은 통계학자?](https://m.post.naver.com/viewer/postView.naver?volumeNo=11775381&memberNo=34921815)
 
 ### 미국 스포츠 선수들이 식단과 몸관리에 미치는 이유: 스포츠 과학
@@ -226,7 +226,7 @@ NBA에서 근 20년간 활약하며 각각 500억, 400억 정도를 연봉으로
 
 (필자의 경험에 의하면 특정 전공에 있으신 분들은 자신의 데이터에 어떤 분석 방법을 적용해야 할지 몰라 분석 프로그램을 잘 다루는 사람에게 정말 큰 돈을 주고 어떻게 분석하면 좋은지 의뢰를 하거나 분석을 부탁한다고 들었다. 물론 그 분은 박사과정을 잘 마치고 교수가 되셨다.)
 
-#### Reference
+Reference
 - Relentless: From Good to Great to Unstoppable" by Tim S. Grover
 - [Chris Paul - basketball player - Great Vegan Athletes](https://www.greatveganathletes.com/chris-paul-vegan-basketball-player/)
 
@@ -246,7 +246,7 @@ NBA에서 근 20년간 활약하며 각각 500억, 400억 정도를 연봉으로
 
 우리는 정말 뒤쳐진 국가일까? 그렇다고 학계나 미국이 무조건 좋고 나쁘다는 것을 이야기하려는 것이 아니다. 미국 또한 옛날부터 좋은 시스템과 관행들을 얻기 위해서 많은 시행착오를 겪었을 것이다. 우리 또한 마찬가지로 좋은 시스템과 관행을 얻기 위해서 학계 사람들과 많은 관계자분들의 노력 아래 시행착오를 겪어가는 것이 아닐까 생각한다.
 
-#### Reference
+Reference
 - [지난 10년간 국제 심리학계를 뒤흔든 재현위기 from 김박사넷](https://phdkim.net/board/free/40393)
 - [ResearchGate](https://www.researchgate.net/figure/Figure-Evidence-of-p-hacking-in-clinical-trials-Magdeburg_fig3_329944722)
 
@@ -285,7 +285,7 @@ NBA에서 근 20년간 활약하며 각각 500억, 400억 정도를 연봉으로
 
 ![image](https://github.com/StatPage/statpage.github.io/assets/61931924/64d1ed7e-4f11-4b2d-a520-91122f493739){: .align-center}
 
-#### Reference
+Reference
 - [Data Science Central](https://www.datasciencecentral.com/babar-mimou/)
 
 
@@ -302,7 +302,7 @@ NBA에서 근 20년간 활약하며 각각 500억, 400억 정도를 연봉으로
 ![image](https://github.com/StatPage/statpage.github.io/assets/61931924/58ff9213-1818-4f60-9b9d-c3a95bbb57da){: .align-center}
 *트위터(현 X)의 추천 모델*
 
-#### Reference
+Reference
 - [수학도가 인공지능 연구에 기여하는 방법](https://horizon.kias.re.kr/15780/)
 
 ![image](https://github.com/StatPage/statpage.github.io/assets/61931924/753f1fe2-d32e-432a-9402-edf3ab1f14a4){: .align-center}

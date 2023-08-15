@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "8월 독서"
+title:  "거짓말이 보이는 나는, 솔직한 너에게 사랑을 했다"
 toc: true
 toc_sticky: true
 # categories: []
