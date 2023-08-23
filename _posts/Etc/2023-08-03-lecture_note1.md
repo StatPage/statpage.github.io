@@ -10,7 +10,7 @@ published: false
 
 # 졸업 후 진로는 어떻게 하실 건가요?
 
-![image](https://github.com/StatPage/statpage.github.io/assets/61931924/058c8249-f947-441f-86b6-9d13afd12cfd){: .align-center}
+![image](https://github.com/StatPage/blog-images/assets/61931924/495bf3ca-820a-4930-be2c-605798f05ffe){: .align-center}
 *생각만 하면 갑갑한 진로 고민*
 
 사실 경력에 관해 생각해봤을 때, 우리가 할 수 있는 선택지는 많다. 하지만 **대학교에서 배운 전공을 살릴 수 있는 선택지는 제한적이다.**
@@ -26,7 +26,7 @@ published: false
 
 실제 사례를 보자.
 
-![image](https://github.com/StatPage/statpage.github.io/assets/61931924/c8381009-276f-4631-abc5-2ed1b1521641)
+![image](https://github.com/StatPage/blog-images/assets/61931924/abf4ee1d-3dd5-44f0-815b-662abb63aed1)
 
 이는 2021년 졸업생 55명 중 10명만 대학원에 진학한 것을 알 수 있고 나머지는 취업과 (희박하지만) 창업을 했다고 볼 수 있다.
 
@@ -34,7 +34,7 @@ published: false
 
 > 그렇다. 진부하지만 이 강의는 돈 얘기를 할 것이고 우리의 전공이 어떻게 활용되어 돈과 연결되는지 알려줄 것이다.
 
-![image](https://github.com/StatPage/statpage.github.io/assets/61931924/f10f17a7-b89e-4961-85f1-a67fc0d381bc){: .align-center}
+![image](https://github.com/StatPage/blog-images/assets/61931924/9f612240-8921-42b0-a725-3fd2e4077e01){: .align-center}
 
 
 # 회사와 소비자는 나에게 왜 돈을 줄까?
@@ -51,14 +51,14 @@ published: false
 
 라는 `보상 심리`다.
 
-![image](https://github.com/StatPage/statpage.github.io/assets/61931924/59932840-310f-4cd8-801d-c6b884d9bfd1){: .align-center}
+![image](https://github.com/StatPage/blog-images/assets/61931924/0e5063cf-40c9-41f1-be47-a492f8f30999){: .align-center}
 
 
 아니 그게 뭐가 문젠데?! 좀 어이 없어 보이는 지적이긴 하다. 하지만 그걸 지적하는 이유는 **내가 공부 좀 했다는 이유로 돈을 어느 정도 받아야 한다는 생각이 잘못**됐기 때문이다.
 
 제목처럼 회사는 왜 나한테 돈을 줄까? 내가 전세계에서 대체할 수 없는 대단한 사고 능력을 지니고 있거나 대단한 석학도 아닌데 말이다.
 
-![image](https://github.com/StatPage/statpage.github.io/assets/61931924/b2b3074d-6a2b-40bc-9f38-db754435f617){: .align-center}
+![image](https://github.com/StatPage/blog-images/assets/61931924/bcbd2280-2434-4703-ac67-94fa784498e3){: .align-center}
 
 
 ## 우리는 그냥 열심히 했기 때문에 돈을 받는 게 아니다.
@@ -71,7 +71,7 @@ published: false
 
 소비자들도 자신의 문제나 욕구를 해결하기 위해 교육같은 서비스나 핸드폰, 빵, 집 등을 돈 주고 얻는 것이다.
 
-![image](https://github.com/StatPage/statpage.github.io/assets/61931924/9d4193ea-bf6d-4cc7-a5d1-6352a0d2bb6a){: .align-center}
+![image](https://github.com/StatPage/blog-images/assets/61931924/31d54414-e7ec-4e47-86bd-39a698be32ca){: .align-center}
 
 ## 사람이나 기업이나 그들의 문제를 해결해주거나 도움이 되면 돈을 준다! 
 
@@ -97,7 +97,7 @@ published: false
 ### 데이터 사이언스 분야에서는 결국 데이터 속에서 이익이 되는 Insight를 빠르게 꺼내고 전달을 해야 한다.
 
 
-![image](https://github.com/StatPage/statpage.github.io/assets/61931924/eb12652a-d9ef-4a45-8fbb-a57ea6c55767){: .align-center}
+![image](https://github.com/StatPage/blog-images/assets/61931924/29fa2672-2c9c-4323-aad8-6cf88ed69c5f){: .align-center}
 
 
 ### How? 그게 회사와 소비자가 돈을 내는 가치다. $\rightarrow$ 맥킨지
@@ -155,8 +155,7 @@ Reference
 - [컨설턴트의 솔루션, 맥킨지 문제해결 과정](https://brunch.co.kr/@backup/15)
 - [운명 바꾼 최악의 컨설팅… 결국 역사 뒤안길로](https://biz.newdaily.co.kr/site/data/html/2021/04/06/2021040600011.html)
 
-
-![image](https://github.com/StatPage/statpage.github.io/assets/61931924/5d06a55a-ac33-4dfd-b595-f255a6710af0){: .align-center}
+![image](https://github.com/StatPage/blog-images/assets/61931924/59d2d80a-53ea-4f9a-9863-c9d2bcbcc8e9){: .align-center}
 
 
 ### 실은 인공지능 분야로 들어오면 결국 계산과 구현 싸움이다. $\rightarrow$ 생성형 AI (Generated AI)
@@ -201,7 +200,7 @@ Reference
 
 물론 통계 수치를 사용하기 시작한 옛날에는 분포나 분포의 특성을 고려하여 기댓값, 회귀 분석을 바로 적용하고 그런 것은 아닐 것이다. 하지만 나이팅 게일이 그랬던 것처럼 지금 들으면 어이가 없을 만한 이유로 사람들이 많이 죽는 상황은 개선할 수 있었다.
 
-![image](https://github.com/StatPage/statpage.github.io/assets/61931924/caad1abe-ed15-4d0e-9aaa-d225efbc7c49){: .align-center}
+![image](https://github.com/StatPage/blog-images/assets/61931924/5d0ace31-5b2b-4551-9341-bc2a6cbf3db4){: .align-center}
 *Rose Diagram: 당시 나이팅게일이 월 별 사망자 유형을 그래프로 표현한 형태. 이를 통해 위생의 중요성을 꺠닫고 근대 의학에 많은 기여를 하였다.*
 
 CLT가 정말 유용한 이유는 우리가 흔히 알고 있는 test를 가능하게 만들어주기 때문이다.
@@ -232,7 +231,7 @@ Reference
 
 
 
-![image](https://github.com/StatPage/statpage.github.io/assets/61931924/d0b5862a-1bb8-4055-be46-97b55722288c){: .align-center}
+![image](https://github.com/StatPage/blog-images/assets/61931924/2d9e34ac-a692-4e37-8651-2cd9baa3cc30){: .align-center}
 
 
 ### 다만 항상 합리적인 것은 아니다. 시행착오를 극복하는 역사: p-hacking
@@ -256,9 +255,9 @@ Reference
 ### 사실 이것 다 회귀 분석과 PCA(FA) 기반의 응용 서비스였다.
 - FA와 PCA의 기본 구조 고찰해보기
 
-![image](https://github.com/StatPage/statpage.github.io/assets/61931924/c0d3d962-d4bc-47a5-9588-ed294450c40b){: .align-center}
+![image](https://github.com/StatPage/blog-images/assets/61931924/47064b9c-82d3-46ca-82e1-7cd0a644cb80){: .align-center}
 
-![image](https://github.com/StatPage/statpage.github.io/assets/61931924/de4989d7-4a83-416f-b1e6-6151101f3cfc){: .align-center}
+![image](https://github.com/StatPage/blog-images/assets/61931924/e7fbaaf9-6812-4b89-be76-02c67359d717){: .align-center}
 
 
 
@@ -267,11 +266,11 @@ Reference
 ### 사실 딥러닝과 머신 러닝에서 활용되는 모든 방법들은 기존 통계학에서 적립된 분포를 응용 및 결합해 활용하는 것이다. ex, Neural Network, CNN, RNN, Topic Modeling, LLM
 - 기본 딥러닝 구조 소개: NN의 구조를 그림으로 접해보자.
 
-![image](https://github.com/StatPage/statpage.github.io/assets/61931924/b2dbeff1-6c9e-4dc1-920c-34e06ceb7cd7){: .align-center}
+![image](https://github.com/StatPage/blog-images/assets/61931924/fbb27ae9-fba0-415a-8875-7eed54b6fc92){: .align-center}
 
 - CNN, RNN, Topic Modeling, LLM(Transfer model) 구조에 어떻게 응용되는가: 결국은 이렇게 데이터화 시키는 목적이 있다. 그 목적은 무엇일까? 정보 기반의 답변해주기
 
-![image](https://github.com/StatPage/statpage.github.io/assets/61931924/8d88d868-3447-4a06-81ca-ff6d74a7838e){: .align-center}
+![image](https://github.com/StatPage/blog-images/assets/61931924/63e3c0c9-e27b-4ae3-8bef-dc62497651c4){: .align-center}
 
 
 
@@ -280,10 +279,10 @@ Reference
 
 - 분포 정리표 소개
 
-![image](https://github.com/StatPage/statpage.github.io/assets/61931924/e0c5a3d8-efe7-4fbb-88a2-3845be1f158c){: .align-center}
+![image](https://github.com/StatPage/blog-images/assets/61931924/d6d9b98c-b2ab-41cd-851c-417ead6f4289){: .align-center}
 *여기서 서로의 관계가 어떻게 되어있는지 잘 알아야 한다.*
 
-![image](https://github.com/StatPage/statpage.github.io/assets/61931924/64d1ed7e-4f11-4b2d-a520-91122f493739){: .align-center}
+![image](https://github.com/StatPage/blog-images/assets/61931924/c003b658-16fd-49f0-906c-81dea4e0017f){: .align-center}
 
 Reference
 - [Data Science Central](https://www.datasciencecentral.com/babar-mimou/)
@@ -299,13 +298,13 @@ Reference
 - 서비스의 이론과 관련해서 구체적인 얘기는 다음 시간에 해줄 것이다.
 - 여기서 얘기할 수 있는 것은 우리가 배운 핵심적인 근본 이론들이 다양한 영역과 맞물려서 서비스로 활용될 수 있다는 것을 인지하는 것이다. 고려대학교 인공지능대학원의 임성빈 교수는 어떤 분야이든 탄탄한 기초에서 새로운 아이디어가 도출된다고 이야기한다.
 
-![image](https://github.com/StatPage/statpage.github.io/assets/61931924/58ff9213-1818-4f60-9b9d-c3a95bbb57da){: .align-center}
+![image](https://github.com/StatPage/blog-images/assets/61931924/a4eca6bf-cacc-4d02-a47b-ca2f1c238374){: .align-center}
 *트위터(현 X)의 추천 모델*
 
 Reference
 - [수학도가 인공지능 연구에 기여하는 방법](https://horizon.kias.re.kr/15780/)
 
-![image](https://github.com/StatPage/statpage.github.io/assets/61931924/753f1fe2-d32e-432a-9402-edf3ab1f14a4){: .align-center}
+![image](https://github.com/StatPage/blog-images/assets/61931924/c0f3278b-7518-43b4-b0f4-9385983edf2e){: .align-center}
 
 ## 모델 검정
 모델 검정은 왜 필요할까? 솔직히 말해서 참신한 것을 만들었다고 주장하는 사람은 널리고 널렸다. 다만 신약 개발할 떄 임상시험을 하는 것처럼 모델 또한 그 유효성을 파악하기 위해 검증 단계가 꼭 필요하다.
@@ -332,7 +331,7 @@ FPR &= \frac{FP}{FP + TN} \quad \text{:전체 negative 대비 positive 예측값
 \end{align*}
 $$
 
-![image](https://github.com/StatPage/statpage.github.io/assets/61931924/7234c447-029f-4037-bb86-ff0535f1f421){: .align-center}
+![image](https://github.com/StatPage/blog-images/assets/61931924/1f0336d4-f173-4a74-a1ac-7deebb134185){: .align-center}
 *AUC: 실제 postive와 negative 집단의 수를 고려한, positive 예측값을 증가시켰을 때 틀린 것 대비 맞은 것의 비율합*
 
 하지만 이 수치들은 통계학의 기본적인 테스트들과 비교해 문제점이 있을 수 있다. 어떤 부분일까? 바로 분산은 고려하지 않고 bias에만 집중한다는 점이다. 그래도 상관은 없다. 결과물이 True 아니면 False니까.
