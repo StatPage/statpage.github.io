@@ -5,7 +5,7 @@ toc: true
 toc_sticky: true
 # categories: [lecture]
 # tags: []
-published: false
+published: true
 ---
 
 # 졸업 후 진로는 어떻게 하실 건가요?
