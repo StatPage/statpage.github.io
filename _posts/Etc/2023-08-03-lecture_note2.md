@@ -13,7 +13,7 @@ published: true
 
 ## 뉴스에서 AI 활용해서 돈 번다는 회사들은 실제로 돈을 잘 벌고 있는 게 맞을까?
 
-![image](https://github.com/StatPage/blog-images/assets/61931924/05af8070-6d99-43a8-a60e-06ebdad6e341){: .align-center}
+![image](https://github.com/StatPage/blog-images/assets/61931924/05af8070-6d99-43a8-a60e-06ebdad6e341){: .align-center}{: width="50%" height="50%"}
 
 많은 회사들이 자신들의 기술력으로 엄청난 돈을 투자받았다고 홍보를 한다. 그런데 투자 받으면 그게 내 돈일까? 아니다. 그 돈은 주주가 투자해 준 돈이니까 그 돈으로 더 많은 돈을 벌어야 한다.
 
@@ -60,9 +60,9 @@ OpenAI처럼 이제 돈을 많이 벌어야 한다. 다른 스타트업 회사�
 
 그리고 수익성을 높이려는 기업으로 우리에게 친숙하면서도 잘 나가는 스타트업 회사가 바로 `당근`이다.
 
-![image](https://github.com/StatPage/blog-images/assets/61931924/a1864bea-df2b-4ba1-a235-3afe00d9c394){: .align-center}
+![image](https://github.com/StatPage/blog-images/assets/61931924/a1864bea-df2b-4ba1-a235-3afe00d9c394){: .align-center}{: width="50%" height="50%"}
 
-![image](https://github.com/StatPage/blog-images/assets/61931924/2fb4695d-f45b-4acc-b74c-64b1ae77f31f){: .align-center}
+![image](https://github.com/StatPage/blog-images/assets/61931924/2fb4695d-f45b-4acc-b74c-64b1ae77f31f){: .align-center}{: width="50%" height="50%"}
 
 ### 한국만 그런 거 아님 일본도 있다!
 
