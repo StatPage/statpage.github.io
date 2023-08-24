@@ -17,6 +17,8 @@ toc_sticky: true
 
 깃허브 블로그 기능은 글만 쓰는 게 아니기 때문에 한 번씩 찾아보게 되는 기능과 출처, 예시를 정리해서 남겨둬야 겠다.
 
+# 이미지
+
 ## 이미지 첨부하기
 
 깃허브 블로그 파일 업로드는 마크다운 파일(.md)로 하기 때문에 이미지를 첨부하기 위해서는 별도의 문법을 사용해야 한다. 나는 필요할 때마다 이미지를 캡처하거나 만드니까 로컬 이미지로 편하게 올릴 수 있는 방법에 대해 알아봤다.
@@ -57,7 +59,7 @@ Reference: [평생 공부 블로그 : Today I Learned‍](https://ansohxxn.githu
 
 그리고 caption이 추가될 수 있도록 아래의 코드를 _base.scss에 추가하면 된다.
 
-```
+```css
 img + em {
   display: block;
   text-align: center;
@@ -67,7 +69,7 @@ img + em {
 ```
 
 결과물: 
-![image](https://github.com/StatPage/statpage.github.io/assets/61931924/8a08f203-11d2-4a28-8f34-9be49aa99c7d){: .align-center}
+![image](https://github.com/StatPage/blog-images/assets/61931924/6f9c3dee-6403-41d0-a4b6-f95cac04ead1){: .align-center}
 
 
 Reference: 
@@ -75,6 +77,24 @@ Reference:
 - [도각도각 Dev Day](https://devyuseon.github.io/github%20blog/using-an-image-caption-in-markdown-jekyll/)
 
 
+
+## 이미지 사이즈 조절하기
+
+이미지 크기는 `px` 단위나 `%` 단위로 정할 수 있다. 
+
+```markdown
+![image](URL){: width="100%" height="100%"}
+```
+
+변경 전
+![image](https://github.com/StatPage/blog-images/assets/61931924/80434c3e-ad1a-4859-91b6-b5fe829759d9){: .align-center}
+
+변경 후
+![image](https://github.com/StatPage/blog-images/assets/61931924/80434c3e-ad1a-4859-91b6-b5fe829759d9){: .align-center}{: width="50%" height="50%"}
+
+Reference: [평생 공부 블로그 : Today I Learned‍](https://ansohxxn.github.io/blog/image/)
+
+# 업로드
 ## 깃허브 블로그 포스팅이 안 보일 때 해결 방법
 
 블로그 글을 쓰기 위해서는 지켜야 하는 양식들이 있다. 예를 들면 `YEAR-MONTH-DAY-title.md`같은 양식으로 써야 하는 그런 것들 말이다. 하지만 그런 걸 잘 지켜도 블로그 업로드가 안 되는 상황이 발생한다. 
@@ -143,11 +163,9 @@ Reference: [danggai.github.io](danggai.github.io)
 나는 Minimial-mistakes theme를 사용하기 때문에 참고한 블로그의 두 번째 방법을 사용하였다.  
 (_include 폴더의 video 파일은 영상의 id 속성 값만 있으면 유튜브 영상을 임베딩할 수 있도록 해준다고 한다.)
 
-![image](https://github.com/StatPage/statpage.github.io/assets/61931924/ac51a37c-5a9c-4bc1-baa2-4c7623b8a289){: .align-center}
+![image](https://github.com/StatPage/blog-images/assets/61931924/1efa524b-132d-4a90-861a-f779150f7d9a){: .align-center}
 *색칠된 부분을 아래 명령어 id에 넣어주자.*
 
-{% include video id="VYOjWnS4cMY" provider="youtube" %}
-
-![image](https://github.com/StatPage/statpage.github.io/assets/61931924/54216466-572f-4039-abb6-c84259705584){: .align-center}
+{% include video id="FABOw10lRbg" provider="youtube" %}
 
 Reference: [평생 공부 블로그: Today I Learned](https://ansohxxn.github.io/blog/youtube/)
