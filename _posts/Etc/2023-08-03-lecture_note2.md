@@ -44,7 +44,7 @@ Reference
 OpenAI가 괜히 API를 위한 개발자용 Document를 열심히 만들고 있는 게 아니다. 
 (추가로 지금 들어가는 비용을 최적화하기 위해 시도하고 있는 이유도 다 수익을 벌기 위해서다.)
 
-### 한국에서는 어떤 회사가 지금 투자 받은 돈으로 성장해야 할까?
+### 한국에는 어떤 회사들이 이런 상황에 있을까?
 
 한국도 비슷한 사례는 없을까? 한 번 우리가 이해할 수 있는 선까지 파고 들어가보자. **왜냐하면 이렇게 해야 내가 어떤 회사에 취업하고 싶은지, 어떤 회사가 진짜로 잘 나가는지 구별할 수 있는 안목을 기를 수 있기 때문이다.**
 
@@ -58,11 +58,21 @@ OpenAI처럼 이제 돈을 많이 벌어야 한다. 다른 스타트업 회사�
 
 ![image](https://github.com/StatPage/blog-images/assets/61931924/cd8676f9-18b5-4c41-b861-dd66d7c8c316)
 
-그리고 수익성을 높이려는 기업으로 우리에게 친숙하면서도 잘 나가는 스타트업 회사가 바로 `당근`이다.
+수익성을 높이려는 기업으로 우리에게 친숙하면서도 잘 나가는 스타트업 회사로는 `당근`이다.
 
 ![image](https://github.com/StatPage/blog-images/assets/61931924/a1864bea-df2b-4ba1-a235-3afe00d9c394){: .align-center}{: width="50%" height="50%"}
 
 ![image](https://github.com/StatPage/blog-images/assets/61931924/2fb4695d-f45b-4acc-b74c-64b1ae77f31f){: .align-center}{: width="50%" height="50%"}
+
+그리고 뤼튼보다는 빠르지만 교육 플랫폼으로써 AI 기술을 적용하여 공격적인 마케팅을 펼쳤던 [뤼이드](https://riiid.com/)라는 회사가 있다.
+
+2019년도로 기억하는데 많은 대학생들과 취준생이 유튜브를 사용했다면 자주 산타토익에 대해 들었을 것이다. 산타토익은 토익 시험의 학습을 도와주는 서비스로 모의 문제를 풀고 나를 위한 학습 유형을 제시해준다. 
+
+중요한 것은 뤼이드는 유니콘 기업(기업 가치 10억 달러 이상 비상장사)으로 거론되며 손정의의 비전펀드에서 2000억원을 투자받은 실적이 있다. 최종적으로 뤼이드의 누적투자유치 금액은 약 2800억원이다.
+
+하지만 최근 기록을 보면 어떨까? 작년 2022년도에 420억 적자가 났다고 한다. 재작년은 249억 적자가 났다. 이런 상황이면 뤼이드는 계속해서 자본금을 소진할 것이다. 
+
+뤼이드는 비전펀드로부터 투자받은 금액도 2024년 7%의 연복리와 함께 상환을 해야 한다. 새로운 시험의 서비스나 타 국가에 진출하여 매출액을 급진적으로 성장시킬 수 없다면, 공격적 마케팅이나 유명 학술지에 기고한 대단한 기술력이 빛 좋은 개살수가 될 수 있음을 유의해야 할 것이다. 
 
 ### 한국만 그런 거 아님 일본도 있다!
 
@@ -100,6 +110,8 @@ Reference
 - [경쟁률 100 대 1…공채 1호 'AI 심리학자' 뽑혔다](https://www.hankyung.com/it/article/202305310887i)
 - [뤼튼, 150억원 규모 시리즈A 투자 유치..."생성 AI 포털로 성장하겠다"](https://www.aitimes.com/news/articleView.html?idxno=151783)
 - [‘확실한 수익모델이…’ 적자 지속 당근마켓, 쿠팡 사례와 다른 이유](https://m.ilyo.co.kr/?ac=article_view&entry_id=441814)
+- [혁신의 숲](https://www.innoforest.co.kr/company/CP00000079)
+- [뤼이드, 지난해 적자 눈텅이... 투자사들도 고심](https://biz.chosun.com/stock/stock_general/2023/04/05/3C3YPJS6IRENBAGSA755M2JPYI/)
 - [석달간 426개 회사 합쳤다…'M&A 천재' 32세 日억만장자 누구](https://www.joongang.co.kr/article/25160020#home)
 - [Yahoo Finance](https://finance.yahoo.com/quote/9552.T/financials?p=9552.T)
 - [EBITDA를 맹신하지 말라](https://dbr.donga.com/article/view/1205/article_no/1790)
