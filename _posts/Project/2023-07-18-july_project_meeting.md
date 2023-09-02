@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "7월 회의"
+title:  "회의 기록"
 toc: true
 toc_sticky: true
 # categories: programming

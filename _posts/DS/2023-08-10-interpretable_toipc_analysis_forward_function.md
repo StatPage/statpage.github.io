@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "k-GNN model flow in GDGNN package"
+title:  "Interpretable Topic Analysis forward function 정리"
 toc: true
 toc_sticky: true
 # categories: []
@@ -592,7 +592,12 @@ Variational Inference를 진행하기 위해서 KL distance를 구하고 있지�
         return theta
 ```
 
-`Expectation_log_Dirichlet` 함수의 경우 `GDGNNmodel` class에 정의되어 있다.
+`Expectation_log_Dirichlet` 함수의 경우 `Dir`(디리클레 분포)이면 analytical solution을 구할 수 있기에 `GDGNNmodel` class에 따로 정의되어 있는 분포다.
+
+함수 안의 내용 또한 미국해서 구할 수 있는 기댓값 식을 작성한 것이다. ([링크](https://en.wikipedia.org/wiki/Dirichlet_distribution))
+
+![image](https://github.com/StatPage/blog-images/assets/61931924/637729ca-6cb9-4c5d-8adc-ea98315f0314){: .align-center}
+
 
 ```python
 def Expectation_log_Dirichlet(gamma):
@@ -600,22 +605,78 @@ def Expectation_log_Dirichlet(gamma):
     return torch.digamma(gamma) - torch.digamma(gamma.sum(dim=-1, keepdim=True))
 ```
 
+`KL2`가 마지막으로 계산되는 부분에서 `myscattersum`이라는 함수가 등장한다. 이 함수는 `GDGNNmodel` class에 정의되어 있다.
+
 ```python
-        ##### generate structure
+def myscattersum(src, index, size=None):
+    # src: B*len, C1, C2,... index: B*len
+    # return: B, C1,C2
+    if src is None:
+        src = torch.ones_like(index, dtype=torch.float, device=index.device)
+    device = src.device  # set device
+
+    # flag is a tensor that has the same size as index and its elements are the number of differences between the elements of index.
+    # index[1:] means that the number of elements in index minus 1. index[:-1] means to exclude the last element of index. .long() means to convert the data type of the tensor to long.
+    # using torch.cat, the last element of flag is 1. This means that the last element of index is different from the previous element of index.
+    # typically flag is used to find the last index of each sample sequence.
+    flag = (index[1:] - index[:-1]).long()  # BLEN-1
+    flag = torch.cat(
+        [flag, torch.ones(1, dtype=torch.long, device=device)], dim=0
+    )  # LEN
+
+    # RANGE is a tensor that has the same size as index and its elements are the cumulative sum of the elements of flag minus 1.
+    # RANGE is used to find the first index of each sample sequence.
+    RANGE = torch.ones_like(index, dtype=torch.long)  # BLEN
+    RANGE = RANGE.cumsum(dim=0) - 1  # BELN
+
+    # ids is a tensor that has the same size as index and its elements are the row indices(indexes) of the elements of x that are greater than 0.
+    # torch.where(x>0) means that the coordinates of the elements of x that are greater than 0 are returned.
+    # nids is a tensor that has the same size as index and its elements are the number of elements in each sample sequence.
+    ids = torch.where(flag > 0)[0]  # LEN # 每个样本序列最后一个点的坐标: Coordinates of the last point of each sample sequence
+    nids = ids[1:] - ids[:-1]  # LEN-1
+    nids = torch.cat([ids[[0]] + 1, nids], dim=0)  # LEN  每个样本序列有多少个点: How many points are there in each sample sequence
+    ids = ids[:-1] + 1  # LEN-1
+
+    # yindex is a tensor that has the same size as index and its elements are the cumulative sum of the elements of nids minus 1.
+    yindex = torch.zeros_like(index, dtype=torch.long)
+    yindex[ids] = nids[:-1]
+    yindex = yindex.cumsum(dim=0)
+    yindex = RANGE - yindex
+
+    # torch.stack is used to stack a sequence of tensors along a new dimension.
+    # torch.sparse_coo_tensor is used to construct a sparse tensor in COO(rdinate) format with non-zero elements at the given indices with the given values.
+    # to_dense() method is used to convert a sparse tensor to a dense tensor.
+    indexs = torch.stack([index, yindex], dim=0)
+    ST = torch.sparse_coo_tensor(indexs, src, device=device)
+    ret = ST.to_dense().sum(dim=1)  # B,C1,C2
+    if size is not None and size > ret.size(0):
+        N = size - ret.size(0)
+        zerovec = torch.zeros(N, *ret.size()[1:], dtype=torch.float, device=device)
+        ret = torch.cat([ret, zerovec], dim=0)
+
+    return ret
+```
+
+myscattersum function is used to sum the elements of the tensor along the specified dimension.
+
+이제는 decoder 파트이다. 이제는 구조를 재정의해서 단어와 그래프 구조만 잘 구해주면 된다.
+
+```python
+        ##### generate structure: L_1
         W = self.get_W()  # (K, K)  after sigmod
-        log_PW = (W).log()  # K,K
-        log_NW = (1 - W).log()  # K,K
+        log_PW = (W).log()  # K,K # log(M): equation (14) in thesis
+        log_NW = (1 - W).log()  # K,K # log(1-M): equation (14) in thesis
         p_phi = phi[edge_index, :]  # 2,B*len_edge, K
         p_edge = torch.sum(
             torch.matmul(p_phi[0], log_PW) * p_phi[1], dim=-1
-        )  # B*len_edge
+        )  # B*len_edge # \sum \phi_{d, n} \dot \log M \dot \phi_{d, n'}: first term equation (14) in thesis
         p_edge = myscattersum(p_edge, edge_id_batch, size=size)  # B
 
-        neg_mask, neg_mask2 = adj_mask(x_batch, device=idx_w.device)
+        neg_mask, neg_mask2 = adj_mask(x_batch, device=idx_w.device) 
 
-        neg_mask[edge_index[0], edge_index[1]] = 0
+        neg_mask[edge_index[0], edge_index[1]] = 0  # remove the positive edges
 
-        n_edge = torch.matmul(torch.matmul(phi, log_NW), phi.T)  # B*len, B*len
+        n_edge = torch.matmul(torch.matmul(phi, log_NW), phi.T)  # B*len, B*len # \sum \phi_{d, n} \dot \log (1-M) \dot \phi_{d', n'}: second term of equation (14) in thesis
         n_edge1 = torch.sum(n_edge * neg_mask, dim=-1)  # B*len
         n_edge1 = myscattersum(n_edge1, x_batch, size=size)  # B
 
@@ -627,45 +688,87 @@ def Expectation_log_Dirichlet(gamma):
         NN = myscattersum(torch.sum(neg_mask, dim=-1), x_batch, size=size)  # B
 
         recon_structure = -(p_edge + n_edge1 / (NN + 1e-6) * NP)
+```
 
-        # #### recon_word
-        beta = self.get_beta()  # (K, V)
+맨 처음부터 get_W()함수가 나온다. 이 함수는 `GDGNNmodel` class에 정의되어 있다.
 
+```python
+    def get_W(self):
+        tew_vector = torch.cat([self.topic_vec, self.topic_edge_vec], dim=-1)  # topic vector and topic edge vector
+        topic_vec = self.topic_linear(tew_vector)  # (K, 64): K -> 64
+        head_vec, tail_vec = torch.chunk(topic_vec, 2, dim=-1)  # (K, 32), (K, 32)
+        head_vec = L2_norm(head_vec)  # L2 normalization
+        tail_vec = L2_norm(tail_vec)  # L2 normalization
+        W = torch.matmul(head_vec, tail_vec.T)  # (K, K)
+        W = torch.sigmoid(4 * W)  # the reason why to multiply 4 is to make the value of W close to 1 or 0
+        I = torch.eye(self.args.num_topic, dtype=torch.float, device=self.args.device)
+        mask = 1 - I
+        return torch.clamp(W, 1e-4, 1 - 1e-4)  # 0.0001 < W < 0.9999
+```
+torch.chunk의 dim=-1은 마지막 차원을 기준으로 나눈다는 의미이다. 즉, head_vec와 tail_vec는 같은 차원을 가지고 있다. 
+
+```python
+def adj_mask(x_batch, device):
+    size = torch.max(x_batch)  # size is the just size number of the batch
+    N = x_batch.size(0)  # N is the number of the nodes in the batch
+    # mask = torch.ones((N, N), device=device)
+    # mask = torch.dropout(mask,p=0.5, train=True)
+    mask = torch.zeros((N, N), device=device)  # N*N matrix with all elements equal to 0
+    for i in range(size + 1):
+        idxs = torch.where(x_batch == i)[0]  # row indices of the elements of x_batch that are equal to i
+        mask[idxs[0] : idxs[-1] + 1, idxs] = 1  # set the elements of the idxs columns of the mask matrix to 1
+    mask2 = 1 - mask  # make the 1 - M matrix(no edge)
+    diag = torch.diag(mask)  # diagonal elements of the mask matrix
+    a_diag = torch.diag_embed(diag)  # diagonal matrix with the diagonal elements of the mask matrix
+    mask = mask - a_diag  # remove the diagonal elements of the mask matrix
+    return mask, mask2
+```
+
+
+```python
+        #### recon_word: first term of L_2
+
+        # Sample z from the posterior distribution
         q_z = torch.distributions.RelaxedOneHotCategorical(
             temperature=self.args.temp, probs=phi
-        )
+        )  # self.args.temp = args.MIN_TEMP = 0.3
         z = q_z.rsample([self.args.num_samp])  # (ns, B*len, K)
+        z = hard_z(z, dim=-1)  # hard_z: Gumbel-Softmax trick
 
-        z = hard_z(z, dim=-1)
-
+        # get the weight of the words
+        beta = self.get_beta()  # (K, V)
         beta_s = beta[:, idx_x]  # K*(B*len) !TODO idx_x or idx_x
         beta_s = beta_s.permute(1, 0)  # (B*len)*K
+        
+        # calculate the \sum \phi_{d, n} \dot \log \beta_{k, w_{d, n}}: first term of equation (S11) in appendix
         recon_word = (phi * (beta_s + 1e-6).log()).sum(-1)  # (B*len)
         recon_word = -myscattersum(idx_w * recon_word, x_batch)  # B
 
-        ######recon_edge
+        ######recon_edge: second term of L_2
+        #
+        # get the edge weight
         beta_edge = self.get_beta_edge(weight=False)
-
         edge_w = torch.unsqueeze(edge_w, 0)  # (1, B*len_edge)
         beta_edge_s = (beta_edge[:, edge_id]).permute(1, 0)  # (B*len_edge,K)
 
-        z_edge_w = z[:, edge_index, :]  # (ns,2,B*len_edge, K)
-        mask = z_edge_w > self.maskrate
+        # get the weight of the edges
+        # > self.maskrate menas that the elements of z_edge_w that are greater than self.maskrate(=0.5) are set to 1 and the other elements are set to 0. This is because the z_edge_w is the output of the Gumbel-Softmax trick.
+        # tensor.unsqueeze(-1) means to add a dimension to the tensor at the last dimension. e.g., tensor.shape = (2, 3), tensor.unsqueeze(-1).shape = (2, 3, 1)
+        z_edge_w = z[:, edge_index, :]  # (ns,2,B*len_edge, K)  # Extract the all columns of the edge_index in the each sample sequence
+        mask = z_edge_w > self.maskrate  
         z_edge_w = z_edge_w * mask
-
+        
         edge_w = edge_w.unsqueeze(-1)  # (1, B*len_edge, 1)
         z_edge_w = edge_w * z_edge_w.prod(dim=1)  # (ns,B*len_edge, K)
         beta_edge_s = beta_edge_s.unsqueeze(0) * z_edge_w  # (ns,B*len_edge,K)
 
-        beta_edge_s = beta_edge_s.permute(1, 0, 2)  # (B*len_edge, ns,K)
-        # beta_edge_s = myscattersum(beta_edge_s, edge_id_batch,size=size)  # (B, ns,K)
+        beta_edge_s = beta_edge_s.permute(1, 0, 2)  # (B*len_edge, ns,K)  # Permute the dimensions of the tensor according to (sequence, row, column) 
         beta_edge_s = scatter(
             beta_edge_s, edge_id_batch, dim=0, dim_size=size, reduce="sum"
         )
         beta_edge_s = beta_edge_s.permute(1, 0, 2)  # (ns,B,K)
 
         z_edge_w = z_edge_w.permute(1, 0, 2)  # (B*len,ns,K)
-        # z_edge_w = myscattersum(z_edge_w, edge_id_batch,size=size)  # (B,ns,K)
         z_edge_w = scatter(z_edge_w, edge_id_batch, dim=0, dim_size=size, reduce="sum")
         z_edge_w = z_edge_w.permute(1, 0, 2)  # (ns,B,K)
         recon_edge = (
