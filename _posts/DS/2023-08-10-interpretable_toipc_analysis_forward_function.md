@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "Interpretable Topic Analysis forward function 정리"
+title:  "졸업 논문에 활용된 topic model forward function 내용 정리"
 toc: true
 toc_sticky: true
 # categories: []
@@ -194,6 +194,8 @@ class instance를 생성할 때, dot notation을 사용해서 그 instance의 me
 
 그래서 `self.encoder(idx_x, idx_w, x_batch, edge_index, edge_w)`는 `self.encoder.forward(idx_x, idx_w, x_batch, edge_index, edge_w)`랑 동일하다.
 
+<br/>
+
 `__call__()` method는 instance가 호출될 때 function처럼 실행하는 method다.
 
 `GNNDir2encoder` class는 `nn.Module` class를 상속한다. `nn.Module` class에는 `__call__()` method가 정의되어 있다. 
@@ -209,12 +211,12 @@ class IDIOT:
     def subtract(self, a, b):
         return a-b
 
-    __call__ = plus
+    __call__ = subtract
 ```
 
 ```python
 idiot = IDIOT()
-idiot(6, 2)   # output: 3
+idiot(6, 2)   # output: 4
 ```
 
 하나의 예시를 살펴보자. 
@@ -235,6 +237,8 @@ model(5)
 여기서 이제 instance인 모델을 데이터와 호출하면 자동으로 `forward()` 함수가 실행된다.
 
 > 근데 왜 `forward()`일까?
+
+<br/>
 
 이건 torch.nn.Module class 파일을 보면 알 수 있다. (파일: torch/nn/modules/module.py)
 
@@ -329,11 +333,14 @@ model(5)
 forward_call = (self._slow_forward if torch._C._get_tracing_state() else self.forward)
 ```
 
-추적(tracing) 상태인지 확인하는데 사용됩니다. 추적 상태에서는 `_slow_forward()` 메서드를 호출하고, 추적 상태가 아니면 forward() 메서드를 호출합니다.
+코드는 `torch._C._get_tracing_state`로 추적(tracing) 상태인지 확인한다. 
 
-`_slow_forward()` 메서드는 추적 상태에서 사용되며, 추적 상태에서는 모델의 순전파를 추적하기 위해 사용됩니다. 추적 상태가 아닌 경우에는 `_slow_forward()` 메서드 대신 forward() 메서드를 호출하여 모델의 순전파를 실행합니다.
+추적 상태에서는 `_slow_forward()` 메서드를 호출하고,  
+추적 상태가 아니면 forward() 메서드를 호출한다.
 
-따라서, forward_call은 추적 상태에서는 `_slow_forward()` 메서드를 호출하고, 추적 상태가 아니면 forward() 메서드를 호출하는데 사용됩니다.
+`_slow_forward()` 메서드는 추적 상태에서 사용되며, 추적 상태에서는 모델의 순전파(Forward Propagation)를 추적하기 위해 사용된다. 
+
+추적 상태가 아닌 경우에는 `forward()` 메서드를 호출하여 모델의 순전파를 실행한다.
 
 결국 `forward_call`은 호출 가능한(callable) instance다. tracing 상태 여부에 따라 `_slow_forward()`를 반환할 수 있지만 지금은 `forward()` method를 반환한다고 생각하면 된다. 그렇게 해서 아래와 같이 작동한다.
 
@@ -341,7 +348,10 @@ forward_call = (self._slow_forward if torch._C._get_tracing_state() else self.fo
 result = forward_call(*args, **kwargs)
 ```
 
-다시 코드를 들여다보면 왜 `GNNDir2encoder` class의 `forward` method가 실행됐는지 알 수 있다.
+<br/>
+
+다시 코드로 돌아와서 보면  
+왜 `GNNDir2encoder` class의 `forward` method가 실행됐는지 알 수 있다.
 
 ```python
 class GNNDir2encoder(nn.Module):
@@ -396,8 +406,6 @@ class GNNDir2encoder(nn.Module):
 
 `super()` 함수는 `nn.Module` class의 속성들을 가지고 초기화된다.
 (속성: 클래스 내부에 포함된 함수나 변수를 의미)
-
-`forward()` 함수는 forward 연산을 진행시키는 함수다. 
 
 진행 순서를 정리하면,
 > self.encoder() $\rightarrow$ nn.Module $\rightarrow$ self.forward()
